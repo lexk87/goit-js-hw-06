@@ -7,7 +7,7 @@ const ingredients = [
   'Condiments',
 ];
 
-const ingredientsList = document.querySelector("#ingredients");
+const ingredientsListEl = document.querySelector("#ingredients");
 
 function makeList(arr, tag) {
   const listArr = [];
@@ -22,4 +22,4 @@ function makeList(arr, tag) {
   tag.append(...listArr);
 }
 
-makeList(ingredients, ingredientsList);
+makeList(ingredients, ingredientsListEl);
