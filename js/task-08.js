@@ -1,4 +1,4 @@
-const form = document.querySelector(".login-form");
+const formEl = document.querySelector(".login-form");
 
 const onFormSend = event => {
     event.preventDefault();
@@ -19,4 +19,4 @@ const onFormSend = event => {
     event.currentTarget.reset();
 }
 
-form.addEventListener("submit", onFormSend);
+formEl.addEventListener("submit", onFormSend);
