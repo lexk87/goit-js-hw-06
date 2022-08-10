@@ -1,15 +1,17 @@
 const textAreaEl = document.querySelector("#validation-input");
-const validLength = Number(textAreaEl.dataset.length);
+
+const changeClass = (classToAdd, classToRemove) => {
+    textAreaEl.classList.add(classToAdd);
+    textAreaEl.classList.remove(classToRemove);
+}
 
 const onTextAreaBlur = event => {
+    const validLength = Number(textAreaEl.dataset.length);
     const currentLength = event.currentTarget.value.length;
     if (currentLength === validLength) {
-        textAreaEl.classList.add("valid");
-        textAreaEl.classList.remove("invalid");
-        return;
+        return changeClass("valid", "invalid");
     }
-    textAreaEl.classList.add("invalid");
-    textAreaEl.classList.remove("valid");
+    changeClass("invalid", "valid");
 };
 
 textAreaEl.addEventListener("blur", onTextAreaBlur);
